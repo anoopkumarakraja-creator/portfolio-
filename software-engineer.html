@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer | Anoop Kumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(145deg, #f8fafc, #eef2f9); color: #0a1e2f; min-height: 100vh; }
+        .container { max-width: 1200px; margin: auto; padding: 2rem; }
+        h1 { font-size: 2.5rem; margin: 1rem 0; display: flex; align-items: center; gap: 15px; }
+        .section-desc { margin-bottom: 2rem; color: #2c4f6e; font-size: 1.1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .icon { font-size: 2rem; color: #2c5f8a; margin-bottom: 10px; }
+        .badge { font-size: 0.7rem; background: #eef3f8; padding: 5px 10px; border-radius: 20px; display: inline-block; margin: 10px 0; }
+        .block { background: #f4f9fc; padding: 10px; border-left: 4px solid #2c5f8a; border-radius: 10px; margin-top: 10px; font-size: 0.9rem; }
+        .nav-buttons { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .btn-nav { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 20px; border-radius: 30px; font-weight: 600; transition: all 0.3s; }
+        .btn-back { background: linear-gradient(135deg, #2c5f8a, #1e3a5f); color: white; }
+        .btn-back:hover { transform: translateX(-5px); }
+        .btn-home { background: white; color: #2c5f8a; border: 2px solid #2c5f8a; }
+        .btn-home:hover { background: #2c5f8a; color: white; transform: translateX(5px); }
+        .portfolio-badge { text-align: center; margin-top: 2rem; padding: 1rem; border-top: 1px solid #ddd; color: #6c757d; }
+        .portfolio-badge a { color: #2c5f8a; text-decoration: none; font-weight: 600; }
+        @media (max-width: 768px) { .container { padding: 1rem; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="nav-buttons">
+        <a href="javascript:history.back()" class="btn-nav btn-back"><i class="fas fa-arrow-left"></i> Go Back</a>
+        <a href="index.html" class="btn-nav btn-home"><i class="fas fa-home"></i> Home Page</a>
+    </div>
+
+    <h1><i class="fas fa-laptop-code"></i> Software Engineering</h1>
+    <p class="section-desc">Full software development lifecycle expertise - from concept to deployment.</p>
+
+    <div class="grid">
+        <div class="card">
+            <div class="icon"><i class="fas fa-project-diagram"></i></div>
+            <h3>SDLC & Methodologies</h3>
+            <div class="badge">Process</div>
+            <p>Agile, Scrum, Waterfall, and modern development practices.</p>
+            <div class="block"><b>Methodologies:</b> Agile, Scrum, Kanban</div>
+            <div class="block"><b>Tools:</b> Jira, Trello, Confluence</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fab fa-git-alt"></i></div>
+            <h3>Version Control & CI/CD</h3>
+            <div class="badge">DevOps</div>
+            <p>Git, GitHub, GitLab, Jenkins, and automated deployments.</p>
+            <div class="block"><b>VCS:</b> Git, GitHub, GitLab</div>
+            <div class="block"><b>CI/CD:</b> Jenkins, GitHub Actions</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-cloud"></i></div>
+            <h3>Cloud & Deployment</h3>
+            <div class="badge">Infrastructure</div>
+            <p>AWS, Azure, Docker, Kubernetes for scalable applications.</p>
+            <div class="block"><b>Cloud:</b> AWS (EC2, S3, Lambda)</div>
+            <div class="block"><b>Containers:</b> Docker, Kubernetes</div>
+        </div>
+    </div>
+    <div class="portfolio-badge"><i class="fas fa-code"></i> Part of <a href="index.html">Anoop Kumar's Portfolio</a> | Software Engineer</div>
+</div>
+</body>
+</html>

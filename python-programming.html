@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming | Anoop Kumar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(145deg, #f8fafc, #eef2f9); color: #0a1e2f; min-height: 100vh; }
+        .container { max-width: 1200px; margin: auto; padding: 2rem; }
+        h1 { font-size: 2.5rem; margin: 1rem 0; display: flex; align-items: center; gap: 15px; }
+        .section-desc { margin-bottom: 2rem; color: #2c4f6e; font-size: 1.1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .icon { font-size: 2rem; color: #2c5f8a; margin-bottom: 10px; }
+        .badge { font-size: 0.7rem; background: #eef3f8; padding: 5px 10px; border-radius: 20px; display: inline-block; margin: 10px 0; }
+        .block { background: #f4f9fc; padding: 10px; border-left: 4px solid #2c5f8a; border-radius: 10px; margin-top: 10px; font-size: 0.9rem; }
+        .nav-buttons { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .btn-nav { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 20px; border-radius: 30px; font-weight: 600; transition: all 0.3s; }
+        .btn-back { background: linear-gradient(135deg, #2c5f8a, #1e3a5f); color: white; }
+        .btn-back:hover { transform: translateX(-5px); }
+        .btn-home { background: white; color: #2c5f8a; border: 2px solid #2c5f8a; }
+        .btn-home:hover { background: #2c5f8a; color: white; transform: translateX(5px); }
+        .portfolio-badge { text-align: center; margin-top: 2rem; padding: 1rem; border-top: 1px solid #ddd; color: #6c757d; }
+        .portfolio-badge a { color: #2c5f8a; text-decoration: none; font-weight: 600; }
+        @media (max-width: 768px) { .container { padding: 1rem; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="nav-buttons">
+        <a href="javascript:history.back()" class="btn-nav btn-back"><i class="fas fa-arrow-left"></i> Go Back</a>
+        <a href="index.html" class="btn-nav btn-home"><i class="fas fa-home"></i> Home Page</a>
+    </div>
+
+    <h1><i class="fab fa-python"></i> Python Programming</h1>
+    <p class="section-desc">Versatile Python developer for web, data science, AI, and automation.</p>
+
+    <div class="grid">
+        <div class="card">
+            <div class="icon"><i class="fas fa-globe"></i></div>
+            <h3>Web Development</h3>
+            <div class="badge">Django/Flask</div>
+            <p>Building scalable web applications using Python frameworks.</p>
+            <div class="block"><b>Frameworks:</b> Django, Flask, FastAPI</div>
+            <div class="block"><b>Use:</b> REST APIs, Full Stack Apps</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-chart-bar"></i></div>
+            <h3>Data Science & AI</h3>
+            <div class="badge">Analytics</div>
+            <p>Data analysis, visualization, and machine learning models.</p>
+            <div class="block"><b>Libraries:</b> Pandas, NumPy, Matplotlib</div>
+            <div class="block"><b>ML:</b> Scikit-learn, TensorFlow</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-robot"></i></div>
+            <h3>Automation</h3>
+            <div class="badge">Scripting</div>
+            <p>Automating repetitive tasks and building tools.</p>
+            <div class="block"><b>Tools:</b> Selenium, BeautifulSoup</div>
+            <div class="block"><b>Use:</b> Web scraping, Task automation</div>
+        </div>
+    </div>
+    <div class="portfolio-badge"><i class="fas fa-code"></i> Part of <a href="index.html">Anoop Kumar's Portfolio</a> | Python Expert</div>
+</div>
+</body>
+</html>

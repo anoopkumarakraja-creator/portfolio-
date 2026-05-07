@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ================================================
+       META TAGS - Yeh browser ko batata hai ki page kaise dikhana hai
+       - charset: Hindi/English characters support
+       - viewport: Mobile pe sahi dikhne ke liye
+  ================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Anoop Kumar | Software Engineer Portfolio</title>
+  
+  <!-- ================================================
+       GOOGLE FONTS - Inter font style
+       Yahan font change kar sakte ho
+       Example: 'Poppins', 'Roboto', 'Open Sans'
+  ================================================ -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ================================================
+       RESET CSS - Sabse basic styling
+       Har browser mein same look aane ke liye
+       Isko mat chhedo
+    ================================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ================================================
+       BODY - Background aur font color
+       Background change: #f9fafc ki jagah koi aur color
+    ================================================ */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafc;
+      color: #18be5d;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* ================================================
+       CONTAINER - Page ke content ko center mein rakhna
+       max-width badhana/chhotana ho toh 1280px change karo
+    ================================================ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ================================================
+       NAVBAR (TOP MENU) - Sticky navigation bar
+       Yahan background aur blur effect hai
+       Naya menu item: <li> tag add karo
+    ================================================ */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter:   (12px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 1rem 0;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* ================================================
+       LOGO - Aapka naam gradient mein
+       Gradient color change karne ke liye #2563eb, #7c3aed badlo
+    ================================================ */
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* ================================================
+       NAVIGATION LINKS - Menu items ke styles
+    ================================================ */
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1f2937;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* ================================================
+       BUTTON STYLES - Primary aur Outline buttons
+       Color change: #2563eb ki jagah apna color
+    ================================================ */
+    .btn {
+      display: inline-block;
+      background: #111827;
+      color: white;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #111827;
+      color: #111827;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+    }
+
+    /* ================================================
+       SECTION - Har section ke beech gap
+       padding: 5rem 0 se gap kam/zyada karo
+    ================================================ */
+    section {
+      padding: 5rem 0;
+    }
+
+    /* ================================================
+       SECTION TITLE - "Toolkit & Expertise" wali heading
+       Neche blue line auto aati hai
+    ================================================ */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 4px;
+      background: #2563eb;
+      border-radius: 4px;
+    }
+
+    /* ================================================
+       HERO SECTION (TOP SECTION) - Introduction wala area
+       - hero-badge: tagline (Software Engineer | Android Dev)
+       - h1: badi heading
+       - hero-desc: description paragraph
+       - avatar-placeholder: AK wala circle
+    ================================================ */
+    .hero {
+      padding: 4rem 0 2rem 0;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: #e0e7ff;
+      color: #1e40af;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1.2rem;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .highlight {
+      background: linear-gradient(120deg, #2563eb, #8b5cf6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #4b5563;
+      margin-bottom: 2rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .hero-image {
+      flex: 0.8;
+      background: linear-gradient(145deg, #e2e8f0, #ffffff);
+      border-radius: 38% 62% 58% 42% / 45% 44% 56% 55%;
+      padding: 1rem;
+      text-align: center;
+    }
+    .avatar-placeholder {
+      background: radial-gradient(circle at 30% 20%, #1e293b, #0f172a);
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 48% 52% 44% 56% / 62% 39% 61% 38%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* ================================================
+       SKILLS SECTION - Yahan se EDIT karo skills
+       --------------------------------------------
+       NAYA SKILL ADD: <a href="page.html" class="skill-tag skill-tag-clickable">🎯 New Skill</a>
+       SKILL REMOVE: Puri line delete karo
+       SKILL LINK CHANGE: href="..." change karo
+    ================================================ */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skill-tag {
+      background: white;
+      border-radius: 60px;
+      padding: 0.7rem 1.5rem;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #111827;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .skill-tag:hover {
+      border-color: #2563eb;
+      transform: translateY(-2px);
+    }
+    
+    /* CLICKABLE SKILL TAG - Arrow ↗ dikhane ke liye */
+    .skill-tag-clickable {
+      background: linear-gradient(135deg, #2563eb08, #7c3aed08);
+      border-color: #2563eb;
+    }
+    .skill-tag-clickable::after {
+      content: '↗';
+      margin-left: 4px;
+      font-size: 0.8rem;
+    }
+    .skill-tag-clickable:hover {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+    }
+
+    /* ================================================
+       PROJECTS SECTION - GitHub projects
+       NAYA PROJECT: .project-card block copy karo
+       PROJECT LINK: href="..." change karo
+    ================================================ */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: white;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: transform 0.2s;
+      border: 1px solid #edf2f7;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+    .project-img {
+      background: linear-gradient(135deg, #1e293b, #2d3a4f);
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.8rem;
+    }
+    .project-info {
+      padding: 1.5rem;
+    }
+    .project-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0;
+    }
+    .project-tags span {
+      background: #f1f5f9;
+      padding: 0.25rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    /* ================================================
+       CERTIFICATES SECTION - Image upload wala area
+       Local storage mein save hoti hai images
+    ================================================ */
+    .certificates-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .cert-card {
+      background: white;
+      border-radius: 1.5rem;
+      width: 280px;
+      transition: transform 0.2s;
+    }
+    .cert-card:hover {
+      transform: scale(1.02);
+    }
+    .cert-placeholder {
+      background: #f1f5f9;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .cert-info {
+      padding: 1rem;
+      text-align: center;
+      border-top: 1px solid #eef2ff;
+    }
+    .upload-btn {
+      background: #2563eb10;
+      border: 1px dashed #2563eb;
+      border-radius: 2rem;
+      padding: 0.4rem 1rem;
+      font-size: 0.75rem;
+      color: #2563eb;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    /* ================================================
+       CONTACT SECTION - Form jahan se message bhejte hain
+       Yahan change mat karna, backend connected hai
+    ================================================ */
+    .contact-form {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      border-radius: 1rem;
+      border: 1px solid #e2e8f0;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+    }
+
+    /* ================================================
+       FOOTER - Social links aur copyright
+       Naya social link: <a href="link">Name</a> add karo
+    ================================================ */
+    .footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      color: white;
+    }
+
+    /* ================================================
+       RESPONSIVE - Mobile phone ke liye styling
+       Auto adjust ho jata hai, mat chhedo
+    ================================================ */
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .nav-flex {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        gap: 1rem;
+        justify-content: center;
+      }
+      section {
+        padding: 3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================================================
+     ================================================
+     ================ HTML BODY STARTS HERE ================
+     ================================================
+     ================================================ -->
+
+<!-- ================================================
+     NAVIGATION BAR (TOP MENU)
+     NAYA MENU ITEM: <li><a href="#section">Name</a></li>
+     MENU ITEM REMOVE: Poori <li> line delete karo
+================================================ -->
+<nav class="navbar">
+  <div class="container nav-flex">
+    <span class="logo">Anoop Kumar</span>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ================================================
+       HERO SECTION (TOP SECTION)
+       ------------------------------------------------
+       YAHAN APNA INTRODUCTION EDIT KARO:
+       1. hero-badge: ✦ Software Engineer | Android Dev | Java Expert
+       2. h1: Building robust <span class="highlight">digital solutions</span>...
+       3. hero-desc: I'm Anoop Kumar — passionate software engineer...
+       4. avatar-placeholder: AK (apne initials change karo)
+  ================================================ -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">✦  Software Engineer | Android Dev | Java Expert</div>
+        <h1>Building robust <span class="highlight">digital solutions</span> with clean code</h1>
+        <p class="hero-desc">I'm Anoop Kumar — passionate software engineer skilled in Web Dev, C, Python, Java, DSA, Artificial Intelligence, Machine Learning, and Android development.</p>
+        <div class="hero-buttons">
+          <a href="#work" class="btn btn-primary">Explore projects →</a>
+          <a href="#contact" class="btn btn-outline">Let's connect</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="avatar-placeholder">AK</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       SKILLS SECTION - IMPORTANT! SABSE EDIT YAHAN HOTA HAI
+       ------------------------------------------------
+       NAYA SKILL ADD KARNE KA TARIKA:
+       <a href="pagename.html" class="skill-tag skill-tag-clickable">🎯 Skill Name</a>
+       
+       SKILL REMOVE KARNE KA TARIKA:
+       Jis skill ko hatana hai uski poori line delete karo
+       
+       SKILL KA PAGE LINK CHANGE:
+       href="webdev.html" ki jagah apna page name likho
+  ================================================ -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Toolkit & Expertise</h2>
+      <div class="skills-grid">
+        <a href="webdev.html" class="skill-tag skill-tag-clickable">🌐 Web development</a>
+        <a href="c-programming.html" class="skill-tag skill-tag-clickable">⚙️ C programming</a>
+        <a href="python-programming.html" class="skill-tag skill-tag-clickable">🐍 Python programming</a>
+        <a href="java-programming.html" class="skill-tag skill-tag-clickable">☕ Java programming</a>
+        <a href="dsa.html" class="skill-tag skill-tag-clickable">📊 Data Structure and Algorithm</a>
+        <a href="android-dev.html" class="skill-tag skill-tag-clickable">📱 Android Developer</a>
+        <a href="software-engineer.html" class="skill-tag skill-tag-clickable">💻 Software Engineer</a>
+        <a href="artificial-intelligence.html" class="skill-tag skill-tag-clickable"> 🤖 Artificial Intelligence</a>
+        <a href="machine-learning.html" class="skill-tag skill-tag-clickable"> 🤖✨ Machine learning</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PROJECTS SECTION - GitHub projects
+       ------------------------------------------------
+       NAYA PROJECT ADD:
+       Copy .project-card block, paste karo,
+       project-img, h3, p, project-tags, project-link change karo
+  ================================================ -->
+  <section id="work">
+    <div class="container">
+      <h2 class="section-title">Featured projects</h2>
+      <div class="projects-grid">
+        
+        <!-- PROJECT 1 - ATM Interface -->
+        <div class="project-card">
+          <div class="project-img">🏧 ☕</div>
+          <div class="project-info">
+            <h3>ATM Interface & Java Suite</h3>
+            <p>Java programs including Number Game, Student Grade Calculator, and ATM Interface.</p>
+            <div class="project-tags"><span>Java</span><span>OOP</span><span>CLI</span></div>
+            <a href="https://github.com/..." target="_blank" class="project-link">View on GitHub →</a>
+          </div>
+        </div>
+        
+        <!-- PROJECT 2 - Student Management System -->
+        <div class="project-card">
+          <div class="project-img">📚 🎓</div>
+          <div class="project-info">
+            <h3>Student Management System</h3>
+            <p>Console-based Java system to manage student records.</p>
+            <div class="project-tags"><span>Java</span><span>File I/O</span><span>CRUD</span></div>
+            <a href="https://github.com/..." target="_blank" class="project-link">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 - Student Grade Calculator -->
+        <div class="project-card">
+          <div class="project-img">📊 ✨</div>
+          <div class="project-info">
+            <h3>Student Grade Calculator</h3>
+            <p>Standalone Java app to calculate grades based on marks.</p>
+            <div class="project-tags"><span>Java</span><span>Logic</span><span>CLI</span></div>
+            <a href="https://github.com/..." target="_blank" class="project-link">GitHub Repository →</a>
+          </div>
+        </div>
+
+        <!-- PROJECT 4 - Number Game -->
+        <div class="project-card">
+          <div class="project-img">🎲 🔢</div>
+          <div class="project-info">
+            <h3>Number Game (Java)</h3>
+            <p>Interactive number guessing game with scoring system.</p>
+            <div class="project-tags"><span>Java</span><span>Game Logic</span><span>Random</span></div>
+            <a href="https://github.com/..." target="_blank" class="project-link">Explore on GitHub →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       CERTIFICATES SECTION - Photo upload wala area
+       Yahan certificates show hote hain, images local storage mein save hoti hain
+       Default certificates: Java, Android, DSA
+       Naya certificate add: JavaScript ke andar certificates array mein push karo
+  ================================================ -->
+  <section id="certificates">
+    <div class="container">
+      <h2 class="section-title">Certifications & Achievements</h2>
+      <p style="margin-bottom: 1.5rem; color: #4b5563;">Showcasing my learning milestones. Click on any card to upload a certificate image.</p>
+      <div class="certificates-grid" id="certificatesGrid"></div>
+      <div style="text-align: center; margin-top: 1rem;">
+        <button id="addCertBtn" class="btn btn-outline" style="font-size: 0.85rem;">+ Add new certificate</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       CONTACT SECTION - BACKEND CONNECTED (IMPORTANT!)
+       ------------------------------------------------
+       YEH FORM BACKEND SE CONNECTED HAI!
+       Form submit karne par data MongoDB database mein save hota hai
+       Isme changes mat karo, nahi toh backend kaam karna band kar dega
+       
+       Form ID: contact-form (important)
+       Input IDs: name, email, message (important)
+  ================================================ -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's build something great</h2>
+      <div class="contact-form">
+        <p style="margin-bottom: 1.5rem; color: #334155;">Have a project idea, collaboration, or just want to talk tech? I'm just a message away.</p>
+        <form id="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email address" required>
+          </div>
+          <div class="form-group">
+            <textarea rows="4" id="message" placeholder="Tell me about your project or inquiry..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send message ✨</button>
+          <p id="form-feedback" style="margin-top: 1rem; font-size: 0.85rem; text-align: center;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================================================
+     FOOTER - Social links aur copyright
+     Naya social link: <a href="your-link">Platform Name</a>
+================================================ -->
+<footer class="footer">
+  <div class="social-links">
+    <a href="https://github.com/anoopkumarakraja-creator" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/anoop-kumar-38aa76308/" target="_blank">LinkedIn</a>
+    <a href="#">Twitter</a>
+    <a href="#">Email</a>
+  </div>
+  <p>© 2025 Anoop Kumar — crafted with Java ☕ and persistence.</p>
+</footer>
+
+<script>
+  /* ================================================
+     ================================================
+     ================ JAVASCRIPT SECTION ================
+     ================================================
+     ================================================ */
+
+  /* ================================================
+     SMOOTH SCROLL - Navbar links smooth scroll karwane ke liye
+     Jab #home, #work, #skills, #certificates, #contact click hoga
+  ================================================ */
+  document.querySelectorAll('.nav-links a, .hero-buttons a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== '#' && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  /* ================================================
+     ================================================
+     CONTACT FORM WITH BACKEND - DATA SAVES TO MONGODB
+     ================================================
+     ================================================
+     
+     YEH SABSE IMPORTANT PART HAI!
+     Jab koi form submit karega toh:
+     1. Name, email, message fetch hoga
+     2. Backend API (/api/contact) par POST request jayegi
+     3. Backend MongoDB mein data save karega
+     4. Success/Error message show hoga
+     
+     AGAR YEH KAAM NAHI KAR RAHA:
+     - Check karo server chal raha hai (node server.js)
+     - Check karo MongoDB connected hai
+     - Browser console mein error dekho (F12)
+  ================================================ */
+  const contactForm = document.getElementById('contact-form');
+  const feedbackEl = document.getElementById('form-feedback');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // Loading message show karo
+      feedbackEl.style.color = '#2563eb';
+      feedbackEl.innerText = '⏳ Sending message...';
+      
+      try {
+        // Backend API call
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 
+            'Content-Type': 'application/json' 
+          },
+          body: JSON.stringify({ name, email, message })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          // Success - green message
+          feedbackEl.style.color = '#166534';
+          feedbackEl.innerText = '✅ ' + data.message;
+          contactForm.reset();  // Form empty karo
+        } else {
+          // Error - red message
+          feedbackEl.style.color = '#b91c1c';
+          feedbackEl.innerText = '❌ ' + data.message;
+        }
+      } catch (error) {
+        // Network error
+        console.error('Error:', error);
+        feedbackEl.style.color = '#b91c1c';
+        feedbackEl.innerText = '❌ Network error. Please try again.';
+      }
+      
+      // 5 seconds baad message hata do
+      setTimeout(() => {
+        feedbackEl.innerText = '';
+      }, 5000);
+    });
+  }
+
+  /* ================================================
+     CERTIFICATES SECTION - Local storage mein save
+     Yeh certificates array hai - yahan se certificate edit karo
+     
+     NAYA CERTIFICATE ADD KARNE KA TARIKA:
+     certificates.push({
+       id: 'cert4',
+       title: 'Your Certificate Name',
+       imageData: null,
+       placeholderIcon: '🏆'
+     });
+  ================================================ */
+  let certificates = [
+    { id: 'cert1', title: 'Java Programming Certificate', imageData: null, placeholderIcon: '☕' },
+    { id: 'cert2', title: 'Android Development Badge', imageData: null, placeholderIcon: '📱' },
+    { id: 'cert3', title: 'Data Structures & Algorithms', imageData: null, placeholderIcon: '🧠' }
+  ];
+
+  // Local storage se load karo (images ke liye)
+  function loadCertificatesFromStorage() {
+    const stored = localStorage.getItem('anoop_certificates');
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) certificates = parsed;
+      } catch(e) {}
+    }
+    renderCertificates();
+  }
+
+  // Local storage mein save karo
+  function saveCertificates() {
+    localStorage.setItem('anoop_certificates', JSON.stringify(certificates));
+  }
+
+  // Certificates ko screen par show karo
+  function renderCertificates() {
+    const grid = document.getElementById('certificatesGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    certificates.forEach(cert => {
+      const card = document.createElement('div');
+      card.className = 'cert-card';
+      const hasImage = cert.imageData && cert.imageData.startsWith('data:image');
+      card.innerHTML = `
+        <div class="cert-placeholder" style="${hasImage ? 'padding:0;' : ''}">
+          ${hasImage ? `<img src="${cert.imageData}" class="cert-img" alt="${cert.title}">` : `<span>${cert.placeholderIcon || '📜'}</span><div>${cert.title}</div><div style="font-size:0.7rem;">(no image yet)</div>`}
+        </div>
+        <div class="cert-info">
+          <strong>${cert.title}</strong>
+          <div><label class="upload-btn">📸 Upload Image <input type="file" accept="image/*" style="display:none;" data-id="${cert.id}"></label></div>
+          ${hasImage ? `<button class="upload-btn" data-remove="${cert.id}" style="background:#fee2e2; color:#b91c1c;">Remove Photo</button>` : ''}
+        </div>
+      `;
+      grid.appendChild(card);
+      
+      // Image upload karne ka event
+      const fileInput = card.querySelector(`input[data-id="${cert.id}"]`);
+      if (fileInput) {
+        fileInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+              const idx = certificates.findIndex(c => c.id === cert.id);
+              if (idx !== -1) {
+                certificates[idx].imageData = ev.target.result;
+                saveCertificates();
+                renderCertificates();
+              }
+            };
+            reader.readAsDataURL(file);
+          } else {
+            alert('Please select a valid image file.');
+          }
+        });
+      }
+      
+      // Image remove karne ka event
+      const removeBtn = card.querySelector(`[data-remove="${cert.id}"]`);
+      if (removeBtn) {
+        removeBtn.addEventListener('click', () => {
+          const idx = certificates.findIndex(c => c.id === cert.id);
+          if (idx !== -1) {
+            certificates[idx].imageData = null;
+            saveCertificates();
+            renderCertificates();
+          }
+        });
+      }
+    });
+  }
+
+  /* ================================================
+     ADD NEW CERTIFICATE BUTTON
+     "+ Add new certificate" button click karne par naya certificate add hoga
+  ================================================ */
+  const addBtn = document.getElementById('addCertBtn');
+  if (addBtn) {
+    addBtn.addEventListener('click', () => {
+      const newId = 'cert_' + Date.now();
+      certificates.push({
+        id: newId,
+        title: 'New Certificate (add yours)',
+        imageData: null,
+        placeholderIcon: '🏅'
+      });
+      saveCertificates();
+      renderCertificates();
+    });
+  }
+
+  loadCertificatesFromStorage();
+
+  /* ================================================
+     AUTO COPYRIGHT YEAR UPDATE - Footer mein current year lagna
+     Copyright year auto update ho jayega har saal
+  ================================================ */
+  const footerPara = document.querySelector('.footer p');
+  if (footerPara) {
+    const currentYear = new Date().getFullYear();
+    footerPara.innerHTML = footerPara.innerHTML.replace('2025', currentYear);
+  }
+</script>
+</body>
+</html>
